@@ -95,18 +95,22 @@ export default function ServicesPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="mb-6 space-y-2">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center">
-                        <ArrowRight className="mr-2 h-4 w-4 text-blue-400" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  {service.features && (
+                    <ul className="mb-6 space-y-2">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-center">
+                          <ArrowRight className="mr-2 h-4 w-4 text-blue-400" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="border-t border-gray-800 pt-4">
-                    <p className="mb-4 text-lg font-semibold">
-                      {service.price}
-                    </p>
+                    {service.price && (
+                      <p className="mb-4 text-lg font-semibold">
+                        {service.price}
+                      </p>
+                    )}
                     <Link
                       href="/contact"
                       className="inline-flex items-center bg-white px-6 py-3 font-semibold text-black transition-colors hover:bg-gray-200"
